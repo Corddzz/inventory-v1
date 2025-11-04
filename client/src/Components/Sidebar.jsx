@@ -52,11 +52,11 @@ const Sidebar = () => {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  `${isActive ? "menu-active text-white" : ""} 
+                  `${isActive ? "bg-primary text-white" : ""} 
      is-drawer-close:tooltip is-drawer-close:tooltip-right mb-3`
                 }
                 data-tip="Homepage"
-                to="/home"
+                to="/"
                 end
               >
                 <svg
@@ -81,7 +81,7 @@ const Sidebar = () => {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  `${isActive ? "menu-active text-white" : ""} 
+                  `${isActive ? "bg-primary text-white" : ""} 
      is-drawer-close:tooltip is-drawer-close:tooltip-right mb-3`
                 }
                 data-tip="Inventory"
@@ -110,7 +110,7 @@ const Sidebar = () => {
             <li>
               <NavLink
                 className={({ isActive }) =>
-                  `${isActive ? "menu-active text-white" : ""} 
+                  `${isActive ? "bg-primary text-white" : ""} 
      is-drawer-close:tooltip is-drawer-close:tooltip-right mb-3`
                 }
                 data-tip="Reports"
