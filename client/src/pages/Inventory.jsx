@@ -4,105 +4,258 @@ const Inventory = () => {
   const [openModal, setOpenModal] = React.useState(false);
 
   return (
-    <div>
-      <h1>Inventory</h1>
-
-      <div className="divider divider-horizontal divider-primary"></div>
-
-      <div className="m-2 p-3">
-        <button className="btn btn-primary" onClick={() => setOpenModal(true)}>
+    <div className="p-6">
+      {/* Header */}
+      <div className="flex items-center justify-between mb-6">
+        <h1 className="text-3xl font-bold">📦 Inventory</h1>
+        <button
+          className="btn btn-primary flex items-center gap-2"
+          onClick={() => setOpenModal(true)}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
+            width="22"
+            height="22"
             viewBox="0 0 24 24"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
-            className="lucide lucide-circle-plus-icon lucide-circle-plus"
+            className="lucide lucide-circle-plus"
           >
             <circle cx="12" cy="12" r="10" />
             <path d="M8 12h8" />
             <path d="M12 8v8" />
           </svg>
-          <span>New</span>
+          <span>New Item</span>
         </button>
-
-        {openModal && (
-          <dialog open id="my_modal_3" className="modal">
-            <div className="modal-box">
-              <form method="dialog">
-                <button
-                  className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
-                  onClick={() => setOpenModal(false)}
-                >
-                  ✕
-                </button>
-                <h3 className="font-bold text-lg my-3 text-center">
-                  Add new item
-                </h3>
-                <fieldset className="fieldset">
-                  <legend className="fieldset-legend">Item Name</legend>
-                  <input
-                    type="text"
-                    className="input input-primary"
-                    placeholder="e.g., book, laptop, etc."
-                  />
-                </fieldset>
-                <fieldset className="fieldset">
-                  <legend className="fieldset-legend">Browsers</legend>
-                  <select defaultValue="Pick a browser" className="select">
-                    <option disabled={true}>Pick a browser</option>
-                    <option>Chrome</option>
-                    <option>FireFox</option>
-                    <option>Safari</option>
-                  </select>
-                  <span className="label">Optional</span>
-                </fieldset>
-              </form>
-            </div>
-          </dialog>
-        )}
       </div>
 
-      <div className="overflow-x-auto">
-        <table className="table">
-          {/* head */}
-          <thead>
+      <div className="divider"></div>
+
+      {/* Inventory Table */}
+      <div className="overflow-x-auto bg-base-100 rounded-xl shadow">
+        <table className="table table-zebra">
+          <thead className="bg-base-200 text-base">
             <tr>
-              <th></th>
+              <th>#</th>
               <th>Name</th>
-              <th>Job</th>
-              <th>Favorite Color</th>
+              <th>Category</th>
+              <th>Brand / Model</th>
+              <th>Quantity</th>
+              <th>Location</th>
+              <th className="text-center">Actions</th>
             </tr>
           </thead>
           <tbody>
-            {/* row 1 */}
             <tr className="hover:bg-base-300">
               <th>1</th>
-              <td>Cy Ganderton</td>
-              <td>Quality Control Specialist</td>
-              <td>Blue</td>
+              <td>Dell Desktop</td>
+              <td>Hardware</td>
+              <td>Dell OptiPlex 7090</td>
+              <td>5</td>
+              <td>IT Office</td>
+              <td className="flex gap-2 justify-center">
+                <button className="btn btn-xs btn-info">Edit</button>
+                <button className="btn btn-xs btn-error">Delete</button>
+              </td>
             </tr>
-            {/* row 2 */}
             <tr className="hover:bg-base-300">
-              <th>2</th>
-              <td>Hart Hagerty</td>
-              <td>Desktop Support Technician</td>
-              <td>Purple</td>
+              <th>1</th>
+              <td>Dell Desktop</td>
+              <td>Hardware</td>
+              <td>Dell OptiPlex 7090</td>
+              <td>5</td>
+              <td>IT Office</td>
+              <td className="flex gap-2 justify-center">
+                <button className="btn btn-xs btn-info">Edit</button>
+                <button className="btn btn-xs btn-error">Delete</button>
+              </td>
             </tr>
-            {/* row 3 */}
             <tr className="hover:bg-base-300">
-              <th>3</th>
-              <td>Brice Swyre</td>
-              <td>Tax Accountant</td>
-              <td>Red</td>
+              <th>1</th>
+              <td>Dell Desktop</td>
+              <td>Hardware</td>
+              <td>Dell OptiPlex 7090</td>
+              <td>5</td>
+              <td>IT Office</td>
+              <td className="flex gap-2 justify-center">
+                <button className="btn btn-xs btn-info">Edit</button>
+                <button className="btn btn-xs btn-error">Delete</button>
+              </td>
+            </tr>
+            <tr className="hover:bg-base-300">
+              <th>1</th>
+              <td>Dell Desktop</td>
+              <td>Hardware</td>
+              <td>Dell OptiPlex 7090</td>
+              <td>5</td>
+              <td>IT Office</td>
+              <td className="flex gap-2 justify-center">
+                <button className="btn btn-xs btn-info">Edit</button>
+                <button className="btn btn-xs btn-error">Delete</button>
+              </td>
             </tr>
           </tbody>
         </table>
       </div>
+
+      {/* Modal */}
+      {openModal && (
+        <dialog open className="modal modal-open">
+          <div className="modal-box max-w-2xl">
+            <h2 className="text-2xl font-bold mb-4 text-center">
+              🖥️ Add New Inventory Item
+            </h2>
+
+            <form className="space-y-6">
+              <fieldset className="fieldset border border-base-300 rounded-xl p-6">
+                <legend className="fieldset-legend font-semibold text-lg flex items-center gap-2">
+                  🧩 Item Information
+                </legend>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+                  {/* Asset ID */}
+                  <div className="form-control">
+                    <label className="label font-medium">Asset ID</label>
+                    <input
+                      type="text"
+                      placeholder="PC-001"
+                      className="input input-bordered input-primary w-full"
+                      disabled
+                    />
+                  </div>
+
+                  {/* Item Name */}
+                  <div className="form-control">
+                    <label className="label font-medium">Item Name</label>
+                    <input
+                      type="text"
+                      placeholder="Dell Desktop"
+                      className="input input-bordered input-primary w-full"
+                      required
+                    />
+                  </div>
+
+                  {/* Category */}
+                  <div className="form-control">
+                    <label className="label font-medium">Category</label>
+                    <select
+                      className="select select-bordered select-primary w-full"
+                      defaultValue=""
+                      required
+                    >
+                      <option value="" disabled>
+                        Select Category
+                      </option>
+                      <option>Hardware</option>
+                      <option>Equipment</option>
+                      <option>Consumables</option>
+                    </select>
+                  </div>
+
+                  {/* Brand / Model */}
+                  <div className="form-control">
+                    <label className="label font-medium">Brand / Model</label>
+                    <input
+                      type="text"
+                      placeholder="Dell OptiPlex 7090"
+                      className="input input-bordered input-primary w-full"
+                    />
+                  </div>
+
+                  {/* Serial Number */}
+                  <div className="form-control">
+                    <label className="label font-medium">Serial Number</label>
+                    <input
+                      type="text"
+                      placeholder="Optional"
+                      className="input input-bordered input-primary w-full"
+                    />
+                  </div>
+
+                  {/* Date Created */}
+                  <div className="form-control">
+                    <label className="label font-medium">Date Created</label>
+                    <input
+                      type="date"
+                      className="input input-bordered input-primary w-full"
+                    />
+                  </div>
+
+                  {/* Location */}
+                  <div className="form-control">
+                    <label className="label font-medium">Location</label>
+                    <input
+                      type="text"
+                      placeholder="IT Office / Lab 1"
+                      className="input input-bordered input-primary w-full"
+                    />
+                  </div>
+
+                  {/* Quantity */}
+                  <div className="form-control">
+                    <label className="label font-medium">Quantity</label>
+                    <input
+                      type="number"
+                      defaultValue={1}
+                      min={1}
+                      className="input input-bordered input-primary w-full"
+                      placeholder="Quantity"
+                    />
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset className="fieldset border border-base-300 rounded-xl p-6">
+                <legend className="fieldset-legend font-semibold text-lg flex items-center gap-2">
+                  🧾 Additional Details
+                </legend>
+
+                <div className="form-control mt-4">
+                  <label className="label font-medium">
+                    Description / Notes
+                  </label>
+                  <textarea
+                    className="textarea textarea-bordered w-full"
+                    rows="3"
+                    placeholder="Write any additional information, specifications, or notes..."
+                  ></textarea>
+                </div>
+              </fieldset>
+
+              <div className="flex justify-end gap-3 pt-2">
+                <button
+                  type="button"
+                  className="btn btn-ghost"
+                  onClick={() => setOpenModal(false)}
+                >
+                  Cancel
+                </button>
+                <button type="submit" className="btn btn-primary">
+                  💾 Save Item
+                </button>
+              </div>
+            </form>
+
+            {/* Close button */}
+            <form method="dialog">
+              <button
+                className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+                onClick={() => setOpenModal(false)}
+              >
+                ✕
+              </button>
+            </form>
+          </div>
+
+          {/* Modal Backdrop */}
+          <form method="dialog" className="modal-backdrop">
+            <button onClick={() => setOpenModal(false)}>close</button>
+          </form>
+        </dialog>
+      )}
     </div>
   );
 };
