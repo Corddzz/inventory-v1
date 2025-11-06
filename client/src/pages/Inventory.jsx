@@ -34,7 +34,6 @@ const Inventory = () => {
 
       <div className="divider"></div>
 
-      {/* Inventory Table */}
       <div className="overflow-x-auto bg-base-100 rounded-xl shadow">
         <table className="table table-zebra">
           <thead className="bg-base-200 text-base">
@@ -45,6 +44,7 @@ const Inventory = () => {
               <th>Brand / Model</th>
               <th>Quantity</th>
               <th>Location</th>
+              <th>Date Created</th>
               <th className="text-center">Actions</th>
             </tr>
           </thead>
@@ -56,6 +56,7 @@ const Inventory = () => {
               <td>Dell OptiPlex 7090</td>
               <td>5</td>
               <td>IT Office</td>
+              <td>2024-01-15</td>
               <td className="flex gap-2 justify-center">
                 <button className="btn btn-xs btn-info">Edit</button>
                 <button className="btn btn-xs btn-error">Delete</button>
@@ -68,6 +69,7 @@ const Inventory = () => {
               <td>Dell OptiPlex 7090</td>
               <td>5</td>
               <td>IT Office</td>
+              <td>2024-01-14</td>
               <td className="flex gap-2 justify-center">
                 <button className="btn btn-xs btn-info">Edit</button>
                 <button className="btn btn-xs btn-error">Delete</button>
@@ -80,6 +82,7 @@ const Inventory = () => {
               <td>Dell OptiPlex 7090</td>
               <td>5</td>
               <td>IT Office</td>
+              <td>2024-01-13</td>
               <td className="flex gap-2 justify-center">
                 <button className="btn btn-xs btn-info">Edit</button>
                 <button className="btn btn-xs btn-error">Delete</button>
@@ -92,6 +95,7 @@ const Inventory = () => {
               <td>Dell OptiPlex 7090</td>
               <td>5</td>
               <td>IT Office</td>
+              <td>2024-01-12</td>
               <td className="flex gap-2 justify-center">
                 <button className="btn btn-xs btn-info">Edit</button>
                 <button className="btn btn-xs btn-error">Delete</button>
